@@ -13,5 +13,5 @@ combinacao_5 = random.choice(string.ascii_letters)
 combinacao_6 = random.choice(string.ascii_letters)
 combinacao_7 = random.choice(string.ascii_letters)
 
-
+print("\n")
 print(f'Senha adquirida: {combinacao_2}{combinacao_6}{combinacao_7}{combinacao_4}{combinacao_3}{combinacao_1}{combinacao_5}')
