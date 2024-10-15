@@ -27,5 +27,5 @@ def passwordLevels():
 
 level = passwordLevels()
 
-print(passwordComplete)
+print(f'Your new password: {passwordComplete}')
 print(f'Password level: {level} ')
