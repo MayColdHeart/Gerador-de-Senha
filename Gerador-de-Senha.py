@@ -8,7 +8,7 @@ text = input('Choice a name: ')
 digits = string.ascii_lowercase + string.ascii_uppercase + string.digits + text
 simb = ['@','!','$']
 
-position = randint(8,16)
+position = randint(4,8)
 passwordRandom = (''.join(random.sample(digits, position)))
 
 
