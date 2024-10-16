@@ -2,43 +2,41 @@ import random
 from random import randint
 import string
 
-text = input('any name: ')
+text = input('Choice a name: ')
+
 
 digits = string.ascii_lowercase + string.ascii_uppercase + string.digits + text
 simb = ['@','!','$']
 
-position = randint(4, 12)
+position = randint(8,16)
 passwordRandom = (''.join(random.sample(digits, position)))
 
 
-passwordPrimary = (''.join('%s%s' % (x,random.choice(simb) if random.random() > 0.5 else '') for x in passwordRandom))
+passwordPrimary = (''.join('%s%s' % (x,random.choice(simb) if random.random() > 0.8 else '') for x in passwordRandom))
 passwordComplete = (''.join('%s%s' % (y, random.choice(text) if random.random()> 0.8 else '') for y in passwordPrimary))
 
 
-def passwordLevels():
+def PasswordQtdLevels():
     qtd = len(passwordComplete)
-
     if qtd < 8:
-        return "low"
+        return "Small"
     elif qtd < 12:
-        return "medium"
+        return "Medium"
     else: qtd < 16 
-    return "high"  
+    return "Big"  
+size = PasswordQtdLevels()
 
-def security(passwordComplete):
+def security():
+    key = passwordComplete
     simbol = '@!$'
-    for special in passwordComplete:
+    for special in key:
         if special in simbol:
-            return True
-    return False
+            return "Safe"
+    return "Weak"
+sec = security()
 
 
-level = passwordLevels()
-
+print("-------------------------------------------------------------------------------------------------")
 print(f'Your new password: {passwordComplete}')
-print(f'Password level: {level} ')
-
-if security(passwordComplete):
-    print("Safe Password")
-else:
-    print("Weak Password")
+print(f'Password size: {size} ')
+print(f'password: {sec}')
