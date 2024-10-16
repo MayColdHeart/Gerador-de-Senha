@@ -25,7 +25,20 @@ def passwordLevels():
     else: qtd < 16 
     return "high"  
 
+def security(passwordComplete):
+    simbol = '@!$'
+    for special in passwordComplete:
+        if special in simbol:
+            return True
+    return False
+
+
 level = passwordLevels()
 
 print(f'Your new password: {passwordComplete}')
 print(f'Password level: {level} ')
+
+if security(passwordComplete):
+    print("Safe Password")
+else:
+    print("Weak Password")
